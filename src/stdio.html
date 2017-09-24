@@ -8,19 +8,96 @@
 </head>
 <body>
 <div style="height:90px;">
-
+<h2>logo</h2>
 </div>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-3">
             <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">SVN</a></li>
-                <li><a href="#">iOS</a></li>
-                <li><a href="#">VB.Net</a></li>
-                <li><a href="#">Java</a></li>
-                <li><a href="#">PHP</a></li>
+                <li class="active"><a href="#">Stdio</a></li>
+                <li class="disabled"><a href="#">Play</a></li>
+                <li class="disabled"><a href="#">Schedule</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        User <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="disabled"><a href="#">Costomer</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Employee</a></li>
+                    </ul>
+                </li>
             </ul>
+        </div>
+        <div class="col-sm-9">
+            <div class="form-inline">
+                <div class="row">
+                    <div class="col-sm-offset-3 col-sm-4">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Stdio Name...">
+                            <span class="input-group-btn">
+                            <button class="btn btn-default">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        </div>
+                    </div>
+                    <div class="col-sm-1">
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus"></span></button>
+                    </div>
+                    <div class="col-sm-1">
+                        <button type="button" class="btn btn-info"><span class="glyphicon glyphicon-remove"></span></button>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-hover" id="table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>Level</th>
+                    <th>Edit</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>NO.1</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td><button class="btn btn-sm"><span class="glyphicon glyphicon-edit"></span></button></td>
+                </tr>
+                <tr>
+                    <td>NO.2</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td><button class="btn btn-sm"><span class="glyphicon glyphicon-edit"></span></button></td>
+                </tr>
+                <tr>
+                    <td>NO.3</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td><button class="btn btn-sm"><span class="glyphicon glyphicon-edit"></span></button></td>
+                </tr>
+                <tr>
+                    <td>NO.4</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td><button class="btn btn-sm"><span class="glyphicon glyphicon-edit"></span></button></td>
+                </tr>
+                <tr>
+                    <td>NO.5</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td><button class="btn btn-sm"><span class="glyphicon glyphicon-edit"></span></button></td>
+                </tr>
+                <tr>
+                    <td>NO.6</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td><button class="btn btn-sm"><span class="glyphicon glyphicon-edit"></span></button></td>
+                </tr>
+                </tbody>
+            </table>
         </div>
 
     </div>
@@ -28,7 +105,60 @@
 </div>
 
 
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Stdio</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="name" class="col-sm-offset-2 col-sm-2 control-label">Name</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="name" placeholder="Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="status" class="col-sm-offset-2 col-sm-2 control-label">Status</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="status" placeholder="input： 空闲 使用 维修">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="level" class="col-sm-offset-2 col-sm-2 control-label">Level</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="level" placeholder="input： VIP 2D 3D">
+                        </div>
+                    </div>
 
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" data-dismiss="modal" onClick="addStdio()">Commit</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<script type="text/javascript">
+    function addStdio() {
+        const str = [];
+        str[0] = document.getElementById("name").value;
+        str[1] = document.getElementById("status").value;
+        str[2] = document.getElementById("level").value;
+
+        const row = document.getElementById("table").insertRow;
+
+        const cell = row.insertCell();
+        cell.innerText() = str[i];
+
+
+
+    }
+</script>
 <script src="../bootstrap/js/jquery.min.js"></script>
 <script src="../bootstrap/js/bootstrap.min.js"></script>
 </body>
